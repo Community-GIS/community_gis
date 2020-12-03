@@ -24,15 +24,30 @@ from django.views.generic import TemplateView
 from geonode.urls import urlpatterns
 from geonode.monitoring import register_url_event
 
+from django.urls import path, re_path, include
+
+from wagtail.admin import urls as wagtailadmin_urls
+from wagtail.documents import urls as wagtaildocs_urls
+from wagtail.core import urls as wagtail_urls
+
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns += [
 ## include your urls here
+	url(r'^dashboard/', include('dashboard.urls')),
+	url(r'^schoolgis/',include('school_gis.urls')),
+    re_path(r'^cms/', include(wagtailadmin_urls)),
+    re_path(r'^documents/', include(wagtaildocs_urls)),
+    re_path(r'^themes/', include(wagtail_urls)),
 
-]
+     path('themes/facility_gis/',include('fgis_map.urls')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-homepage = register_url_event()(TemplateView.as_view(template_name='site_index.html'))
+# homepage = register_url_event()(TemplateView.as_view(template_name='site_index.html'))
 
 urlpatterns = [
-    url(r'^/?$',
-        homepage,
-        name='home'),
+   url(r'^/?$',
+       TemplateView.as_view(template_name='landing-page.html'),
+       name='home'),
  ] + urlpatterns
