@@ -275,7 +275,7 @@ var districtZoom = [7,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,
 
 var LayerList = [];
 
-const domain = ['https://makerghat.urbansciences.in/','http://localhost/'];
+const domain = ['https://communitygis.net/','http://localhost/'];
 
 var rootUrl = domain[0] + 'geoserver/geonode/ows';
 
@@ -301,7 +301,7 @@ function addMyNewLayers(amenity,dis){
    var index = listOfDistrict.indexOf(dis);
    mymap.setView([districtLat[index], districtLong[index]], districtZoom[index]);
    
-// var base_url = "https://makerghat.urbansciences.in/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=application/json&";
+// var base_url = "https://communitygis.net/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=application/json&";
 
 
 var tempParameter = defaultParameters;
@@ -331,7 +331,7 @@ else if(amenity === 'Household Amenities'){
         info.addTo(mymap);
         mymap.removeControl(legend);
         //tempParameter.propertyName="id,the_geom,district_n,area_name,tot_p,tot_f,tot_m,p_ill,p_lit";    
-    //     var base_url = "https://makerghat.urbansciences.in/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=application/json&";
+    //     var base_url = "https://communitygis.net/geoserver/geonode/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=application/json&";
     // layer_url =base_url + "&typeName=geonode%3Ahousehold&cql_filter=district_n='"+houseLayerCode[index]+"'";
     displayPolygon(tempParameter,districtLat[index],districtLong[index]);
 

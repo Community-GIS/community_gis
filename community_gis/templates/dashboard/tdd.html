@@ -785,7 +785,7 @@
         };
       }
       const domain = [
-        "https://makerghat.urbansciences.in/",
+        "https://communitygis.net/",
         "http://localhost/",
       ];
       var rootUrl = domain[0] + "geoserver/geonode/ows";
@@ -1121,7 +1121,7 @@
           mymap.removeLayer(area);
         }
         let rootUrl =
-          "https://makerghat.urbansciences.in/geoserver/geonode/ows";
+          "https://communitygis.net/geoserver/geonode/ows";
 
         let options = {
           service: "WFS",
@@ -1167,7 +1167,7 @@
         //clear_layer();
         //console.log('kk',distLayerLatLong);
         var wms_layer = L.tileLayer.wms(
-          "https://makerghat.urbansciences.in/geoserver/wms",
+          "https://communitygis.net/geoserver/wms",
           {
             layers: "geonode:po_geom",
             format: "image/png",
@@ -1195,7 +1195,7 @@
         //clear_layer();
         //console.log('kk',distLayerLatLong);
         var wms_layer = L.tileLayer.wms(
-          "https://makerghat.urbansciences.in/geoserver/wms",
+          "https://communitygis.net/geoserver/wms",
           {
             layers: "geonode:maharashtra_districts",
             format: "image/png",
@@ -1220,7 +1220,7 @@
       function putWMStrib(layer, cql) {
         //console.log(cql);
         var wms_layer = L.tileLayer.wms(
-          "https://makerghat.urbansciences.in/geoserver/wms",
+          "https://communitygis.net/geoserver/wms",
           {
             layers: layer,
             format: "image/png",
@@ -1236,7 +1236,7 @@
         wms_layer.addTo(mymap);
 
         TRIBLAYER =
-          "https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" +
+          "https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" +
           wms_layer.options.layers +
           "&QUERY_LAYERS=" +
           wms_layer.options.layers;
@@ -1257,7 +1257,7 @@
         var stLayerLatLong = listState[indstate];
 
         var wms_layer = L.tileLayer.wms(
-          "https://makerghat.urbansciences.in/geoserver/wms",
+          "https://communitygis.net/geoserver/wms",
           {
             layers: "geonode:states_in_india",
             format: "image/png",
@@ -1276,7 +1276,7 @@
       //this function is for state boundary
       function putWMS(layer) {
         var wms_layer = L.tileLayer.wms(
-          "https://makerghat.urbansciences.in/geoserver/wms",
+          "https://communitygis.net/geoserver/wms",
           {
             layers: layer,
             format: "image/png",
@@ -1288,7 +1288,7 @@
         wms_layer.addTo(mymap);
 
         FACLAYER =
-          "https://makerghat.urbansciences.in/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" +
+          "https://communitygis.net/geoserver/geonode/wms?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetFeatureInfo&LAYERS=" +
           wms_layer.options.layers +
           "&QUERY_LAYERS=" +
           wms_layer.options.layers;
@@ -1304,7 +1304,7 @@
 
       function addWMSLegend(layer) {
         lagendGraphic =
-          "https://makerghat.urbansciences.in/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=" +
+          "https://communitygis.net/geoserver/wms?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=" +
           layer +
           "&LEGEND_OPTIONS=forceLabels:on";
         wms_legend = L.wmsLegend(lagendGraphic);
@@ -1373,7 +1373,7 @@
       function removeWMStrib(cql) {
         // console.log(tribLayerList);
         var wms_layer = L.tileLayer.wms(
-          "https://makerghat.urbansciences.in/geoserver/wms",
+          "https://communitygis.net/geoserver/wms",
           {
             layers: "geonode:maha_tribal_villages_and_towns",
             format: "image/png",
@@ -1498,7 +1498,7 @@
         };
 
         selectedItems.forEach((sel) => {
-          let newurl = `https://makerghat.urbansciences.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:melghat_hamlets_23apr&cql_filter=facility_c='${listFacility[sel]}'`;
+          let newurl = `https://communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:melghat_hamlets_23apr&cql_filter=facility_c='${listFacility[sel]}'`;
 
           console.log(newurl);
           clearpoint_layer();
