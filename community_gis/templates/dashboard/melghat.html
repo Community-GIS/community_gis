@@ -465,7 +465,7 @@ function queryFeatures(currentPos, numResults) {
         fillOpacity: 0.7
     };
 }
-    const domain = ['https://makerghat.urbansciences.in/','http://localhost/'];
+    const domain = ['https://communitygis.net/','http://localhost/'];
     var rootUrl = domain[0] + 'geoserver/geonode/ows';
 
     var defaultParameters = {
@@ -500,8 +500,8 @@ function queryFeatures(currentPos, numResults) {
         // mymap.setView([distLayerLatLong[1],distLayerLatLong[2]],9);
 
         // switch(district){
-        // case 'Akola': url = "https://makerghat.urbansciences.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:maha_blocks_30mar&cql_filter=dtname='Akola'&propertyName=the_geom";break;
-        // case 'Amravati': url = "https://makerghat.urbansciences.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:maha_blocks_30mar&cql_filter=dtname='Amravati'&propertyName=the_geom";break;
+        // case 'Akola': url = "https://communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:maha_blocks_30mar&cql_filter=dtname='Akola'&propertyName=the_geom";break;
+        // case 'Amravati': url = "https://communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:maha_blocks_30mar&cql_filter=dtname='Amravati'&propertyName=the_geom";break;
         // }
 
         //mymap.spin(true,{lines: 15, length: 1, width: 50, scale: 200,radius: 200, color: "grey"});
@@ -557,7 +557,7 @@ function queryFeatures(currentPos, numResults) {
     // });
 
 
-    // blockLayer = new L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/geonode/ows', {
+    // blockLayer = new L.tileLayer.wms('https://communitygis.net/geoserver/geonode/ows', {
     //     layers: 'geonode:maha_map_06feb2020',
     //     format: 'image/png',
     //     version: '1.3.0',
@@ -621,7 +621,7 @@ function putWMSLayer(){
              var distLayerLatLong= listDistrict[aspiD];
              //clear_layer();
              //console.log('kk',distLayerLatLong);
-            var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms',{
+            var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms',{
             layers: 'geonode:maha_village_polygon_29mar',
             format: 'image/png',
             transparent:'true',
@@ -647,7 +647,7 @@ function putWMSLayerst(){
              console.log(indstate);
              var stLayerLatLong= listState[indstate];
             
-            var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms',{
+            var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms',{
             layers: 'geonode:states_in_india',
             format: 'image/png',
             transparent:'true',
@@ -665,7 +665,7 @@ function putWMSLayerst(){
          }
 //this function is for state boundary
 function putWMS(layer){
-    var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms',{
+    var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms',{
         layers: layer,
         format: 'image/png',
         transparent:'true',
@@ -831,7 +831,7 @@ L.Map.include({
 
 	        	selectedItems.forEach(sel => {
 
-	        		let newurl =`https://makerghat.urbansciences.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:melghat_hamlets_23apr&cql_filter=facility_c='${listFacility[sel]}'`;
+	        		let newurl =`https://communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:melghat_hamlets_23apr&cql_filter=facility_c='${listFacility[sel]}'`;
 
 	        		console.log(newurl);
 	        		clearpoint_layer();

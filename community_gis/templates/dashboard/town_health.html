@@ -345,7 +345,7 @@ return {
     fillOpacity: 0.7
 };
 }
-const domain = ['https://makerghat.urbansciences.in/','http://localhost/'];
+const domain = ['https://communitygis.net/','http://localhost/'];
 var rootUrl = domain[0] + 'geoserver/geonode/ows';
 
 var defaultParameters = {
@@ -447,7 +447,7 @@ function putWMSLayer(){
            var aspiD = document.getElementById('district').value;
          var distLayerLatLong= listDistrict[aspiD];
          //clear_layer();
-        var wms_layer = L.tileLayer.wms('https://makerghat.urbansciences.in/geoserver/wms',{
+        var wms_layer = L.tileLayer.wms('https://communitygis.net/geoserver/wms',{
         layers: 'geonode:TownHealth0',
         format: 'image/png',
         transparent:'true',
@@ -599,7 +599,7 @@ function GetSelected() {
             console.log(distLayerLatLong[0]);
 
         // console.log(distLayerLatLong)
-        let newurl =`https://makerghat.urbansciences.in/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:townhealth_centroid_15apr&cql_filter=district_n='${distLayerLatLong[0]}' AND ${listFacility[sel]}>0`
+        let newurl =`https://communitygis.net/geoserver/ows?service=WFS&version=1.0.0&request=GetFeature&outputFormat=json&typename=geonode:townhealth_centroid_15apr&cql_filter=district_n='${distLayerLatLong[0]}' AND ${listFacility[sel]}>0`
         
         function onEachFeatureForPoint(feature, layer) {
             if(sel === 'Allo'){
